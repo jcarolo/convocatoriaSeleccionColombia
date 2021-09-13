@@ -1,23 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package convocatoriaseleccion;
 
 import java.util.Scanner;
 import jugadores.Jugadores;
 
-/**
- *
- * @author USUARIO
- */
+
 public class ConvocatoriaSeleccion {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
        Scanner entrada = new Scanner(System.in);
        int opcion;
@@ -41,11 +31,12 @@ public class ConvocatoriaSeleccion {
              System.out.println ("4.Mostar Jugadores convocado:" );
              System.out.println ("5.Salir: " );
              
-             System.out.println("Digite una opcion: ");
+             System.out.println("Digite una opción: ");
             opcion=entrada.nextInt();
             switch (opcion){
                 case 1:
-                    System.out.println("Registro de jugador: ");
+                    System.out.println("Registro de jugadores: ");
+                    System.out.println("***********");
                     System.out.println("***********");
                     
                     jugadores [contador]=new Jugadores();
@@ -80,21 +71,23 @@ public class ConvocatoriaSeleccion {
                 case 2:
                
                 System.out.println("Digite # de camiseta: ");
+                System.out.println("***********");
+                
                 buscarCamiseta=entrada.nextInt();
                 
                     for(int i=0; i<contador; i++){
                         
                         if(buscarCamiseta ==jugadores[i].getNroCamiseta()){
                     
-                        System.out.println("La remera del jugador es:" +jugadores[i].getNroCamiseta());                       
+                        System.out.println("La camiseta del jugador es:" +jugadores[i].getNroCamiseta());                       
                         System.out.println("El nombre del jugador es:" +jugadores[i].getNombre());
                         System.out.println("El apellido del jugador es:" +jugadores[i].getApellido());
                         System.out.println("La posición del jugador es:" +jugadores[i].getPosicion());
                         System.out.println("La edad del jugador es:"+ jugadores[i].getEdad());
-                        System.out.println("La el equipo del jugador es:" +jugadores[i].getEquipo());
+                        System.out.println("El equipo del jugador es:" +jugadores[i].getEquipo());
                          break;
                         } else{                        
-                      System.out.println ("el jugador no esta convocado");
+                      System.out.println ("El jugador no esta convocado");
                                   
                
                         }
@@ -103,9 +96,9 @@ public class ConvocatoriaSeleccion {
                 case 3:
                      
                     
-                System.out.println("EDITAR INFORMACION: ");
+                System.out.println("EDITAR INFORMACION CONVOCADOS: ");
                   
-                System.out.println("Numero de camiseta ");
+                System.out.println("Número de la camiseta ");
                 
                 cambiarJugador=entrada.nextInt();
                 
@@ -113,8 +106,8 @@ public class ConvocatoriaSeleccion {
                         
                 if(cambiarJugador ==jugadores[i].getNroCamiseta()){
                     
-                    System.out.println("La remera del jugador es:" + jugadores[i].getNroCamiseta());
-                    System.out.println("Digite el numero de la nueva remera");
+                    System.out.println("El número de camiseta es:" + jugadores[i].getNroCamiseta());
+                    System.out.println("Digite el número de la camiseta del nuevo jugador");
                     jugadores[i].setNroCamiseta(entrada.nextInt());
                    
                     
@@ -128,7 +121,7 @@ public class ConvocatoriaSeleccion {
                      jugadores[i].setApellido(entrada.next());
                      
                      
-                    System.out.println("La posicion del jugador es:"+jugadores[i].getPosicion());
+                    System.out.println("La posición del jugador es:"+jugadores[i].getPosicion());
                        System.out.println("Digite la posicion del nuevo jugador");
                         jugadores[i].setPosicion(entrada.next());
                     
@@ -159,12 +152,12 @@ public class ConvocatoriaSeleccion {
                       System.out.println("Lista de convocados");
                         System.out.println("");                    
                         for(int i=0; i<contador; i++){
-                        System.out.println("Nro Camiseta jugador convocado"+jugadores[i].getNroCamiseta());
-                        System.out.println("Nombre del jugador convocado"+jugadores[i].getNombre());
-                        System.out.println("Apellido del jugador convocado"+jugadores[i].getApellido());
-                        System.out.println("Posición jugador convocado"+jugadores[i].getPosicion());
-                        System.out.println("Edad jugador covocado"+jugadores[i].getEdad());
-                        System.out.println("Equipo donde juega jugador convocado"+jugadores[i].getEquipo());
+                        System.out.println("Número camiseta jugador convocado: "+jugadores[i].getNroCamiseta());
+                        System.out.println("Nombre del jugador convocado: "+jugadores[i].getNombre());
+                        System.out.println("Apellido del jugador convocado: "+jugadores[i].getApellido());
+                        System.out.println("Posición jugador : "+jugadores[i].getPosicion());
+                        System.out.println("Edad jugador covocado: "+jugadores[i].getEdad());
+                        System.out.println("Equipo donde juega convocado: "+jugadores[i].getEquipo());
                         System.out.println("");                        
                     }          
                     
@@ -176,8 +169,7 @@ public class ConvocatoriaSeleccion {
                 
                 default:
                     break;
-            }
-            
+            }            
             
             
         } while (opcion!=5);
